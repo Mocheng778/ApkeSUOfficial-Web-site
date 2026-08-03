@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ApkeSU 官方下载站 | V2.6.0 32685</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="toast" id="toast">复制成功！打开QQ粘贴即可访问</div>
+
+<!-- ── 导航栏 ── -->
+<nav>
+    <a href="#home" class="logo">ApkeSU</a>
+    <div class="nav-menu">
+        <a href="#home" class="active">首页</a>
+        <a href="#capabilities">核心能力</a>
+        <a href="#personalize">个性化</a>
+        <a href="#opensource">开源</a>
+        <a href="#community">社群</a>
+        <a href="#guide">教程</a>
+    </div>
+    <select class="lang-select" id="langSelect" onchange="switchLang(this.value)">
+        <option value="zh">中文</option>
+        <option value="en">English</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+    </select>
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">
+        <span class="icon" id="themeIcon">🌙</span>
+        <span id="themeText">暗黑</span>
+    </button>
+</nav>
+
+<!-- ── 首屏 Banner ── -->
+<section class="banner" id="home">
+    <span class="badge">APKESU FOR ANDROID GKI</span>
+    <h1>
+        把 Root 管理，做得更完整。
+        <span data-i18n="banner-sub">基于 KernelSU 深度改造，聚焦 Manager 体验、LKM 修补与个人设备调试。</span>
+    </h1>
+    <p data-i18n="banner-desc">Tracepoint LKM｜KPatch Next 内置｜内置主题主题｜全品牌手机平板通用</p>
+    <div class="btn-group">
+        <a href="download.html" class="btn btn-primary" data-i18n="btn-download">获取 ApkeSU</a>
+        <a href="https://github.com/fixz232/ApkeSU" class="btn btn-secondary" data-i18n="btn-github">GitHub 源码</a>
+    </div>
+</section>
+
+<div class="container">
+
+    <!-- ── 核心能力 ── -->
+    <section class="card" id="capabilities">
+        <h2 data-i18n="cap-title">核心能力</h2>
+        <p data-i18n="cap-desc">从内核策略、ksud 到 Manager，ApkeSU 把关键状态放在同一条链路里，让异常更容易被发现和处理。</p>
+        <div class="grid">
+            <div class="grid-item">
+                <h3 data-i18n="cap-1-title">LKM 底层 Root</h3>
+                <p data-i18n="cap-1-desc">无需修补 Boot 镜像即可加载内核模块，完整 Root 权限，兼容 SELinux 强制模式。</p>
+            </div>
+            <div class="grid-item">
+                <h3 data-i18n="cap-2-title">KPatch Root 隐藏</h3>
+                <p data-i18n="cap-2-desc">清除 Root 检测痕迹，适配银行、支付、游戏风控软件的安全校验。</p>
+            </div>
+            <div class="grid-item">
+                <h3 data-i18n="cap-3-title">App Profile 管理</h3>
+                <p data-i18n="cap-3-desc">按应用精确设置 uid、gid、capabilities、SELinux 与挂载命名空间，权限颗粒度更细。</p>
+            </div>
+            <div class="grid-item">
+                <h3 data-i18n="cap-4-title">全自动救砖防护</h3>
+                <p data-i18n="cap-4-desc">自动备份 boot 分区，卡 logo、无限重启时自动回滚修复，降低刷机风险。</p>
+            </div>
+            <div class="grid-item">
+                <h3 data-i18n="cap-5-title">快捷工具箱</h3>
+                <p data-i18n="cap-5-desc">一键进入 Rec、Fastboot、EDL 深度下载模式，无需记忆复杂指令。</p>
+            </div>
+            <div class="grid-item">
+                <h3 data-i18n="cap-6-title">模块统一管理</h3>
+                <p data-i18n="cap-6-desc">批量开关 Root 模块，自动检测版本更新，模块生态一站式管理。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── 个性化 / 主题 ── -->
+    <section class="card" id="personalize">
+        <h2 data-i18n="personalize-title">个性化体验</h2>
+        <p data-i18n="personalize-desc">界面风格、背景、图标、卡片、启动媒体和声音都能独立设置，也可以打包成 .kstheme 主题文件迁移。</p>
+        <div class="grid">
+            <div class="grid-item">
+                <h3 data-i18n="pers-1-title">8 种界面风格</h3>
+                <p data-i18n="pers-1-desc">Miuix、Material、Obsidian Console、Liquid Glass、Four Seasons、SKRoot(Pro)、Alpha、Delta，不只是改主题色。</p>
+            </div>
+            <div class="grid-item">
+                <h3 data-i18n="pers-2-title">二次元像素主题</h3>
+                <p data-i18n="pers-2-desc">20+ 像素动漫主题，春日清新、赛博朋克深色等全套风格，支持日夜自动切换。</p>
+            </div>
+            <div class="grid-item">
+                <h3 data-i18n="pers-3-title">动态背景系统</h3>
+                <p data-i18n="pers-3-desc">设置全局或分页面壁纸（图片/GIF/视频），支持粒子动画与毛玻璃效果。</p>
+            </div>
+            <div class="grid-item">
+                <h3 data-i18n="pers-4-title">图标与声音</h3>
+                <p data-i18n="pers-4-desc">替换启动器图标和底部导航图标；支持启动音效、点击音效和背景音乐自定义。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── 机型适配 ── -->
+    <section class="card" id="device">
+        <h2 data-i18n="device-title">设备适配清单</h2>
+        <p data-i18n="device-desc">基于 GKI 内核，覆盖主流品牌全机型。Android 13/14/15，骁龙、天玑处理器全覆盖。</p>
+        <ul class="device-list">
+            <li>✅ OPPO / 一加 / 真我：Find、Reno、一加 Ace、真我 GT 全系完美适配</li>
+            <li>✅ 小米 / 红米：数字旗舰、Ultra、K 游戏系列、Note 千元机全部兼容</li>
+            <li>✅ 游戏手机：红魔全系、联想拯救者电竞手机完整支持</li>
+            <li>✅ 魅族：Flyme 所有 GKI 内核机型稳定运行</li>
+            <li>✅ 全品牌平板：小米、OPPO、联想、一加平板全部适配</li>
+        </ul>
+    </section>
+
+    <!-- ── 开源 ── -->
+    <section class="card" id="opensource">
+        <h2 data-i18n="open-title">开源与合规</h2>
+        <p data-i18n="open-desc">ApkeSU 是 KernelSU 的衍生开源项目。内核部分遵循 GPL-2.0-only，Manager 衍生代码遵循 GPL-3.0-or-later。所有修改公开可查，无付费售卖版本。</p>
+        <div class="grid">
+            <div class="grid-item">
+                <h3 data-i18n="open-1-title">完整源码</h3>
+                <p data-i18n="open-1-desc">公开所有修改与对应代码，接受社区审查。</p>
+            </div>
+            <div class="grid-item">
+                <h3 data-i18n="open-2-title">尊重上游</h3>
+                <p data-i18n="open-2-desc">保留 KernelSU 来源标注与许可证声明。</p>
+            </div>
+            <div class="grid-item">
+                <h3 data-i18n="open-3-title">免费分发</h3>
+                <p data-i18n="open-3-desc">无官方付费售卖版本，社区自由获取。</p>
+            </div>
+        </div>
+        <p style="margin-top:20px">
+            <a href="https://github.com/fixz232/ApkeSU" target="_blank" class="btn btn-secondary" style="font-size:14px;padding:10px 20px;" data-i18n="btn-src">查看 GitHub 源码 ↗</a>
+        </p>
+    </section>
+
+    <!-- ── 社群 ── -->
+    <section class="card" id="community">
+        <h2 data-i18n="comm-title">官方社群</h2>
+        <p data-i18n="comm-desc">反馈问题、讨论设备适配、跟进项目更新，官方唯一渠道如下，谨防假冒。</p>
+        <div class="social-box">
+            <h3>👥 ApkeSU 官方 QQ 群（群号：778719605）</h3>
+            <div class="row-box">
+                <a href="https://qm.qq.com/q/8s8YlEntAI" target="_blank" class="social-link" data-i18n="qq-open">直接打开 QQ 群</a>
+                <button class="social-link copy" onclick="copyText('https://qm.qq.com/q/8s8YlEntAI','群链接复制成功，打开QQ粘贴加群')" data-i18n="qq-copy">复制群链接备用</button>
+            </div>
+
+            <h3 style="margin-top:20px;">📢 Telegram 官方频道</h3>
+            <p class="tip-text" data-i18n="tg-tip">点击直接跳转 TG 频道，无法跳转时复制完整链接打开 Telegram 加入</p>
+            <div class="row-box">
+                <a href="https://t.me/ApkeSu" target="_blank" class="social-link chan" data-i18n="tg-open">打开 TG 频道</a>
+                <button class="social-link copy" onclick="copyText('https://t.me/ApkeSu','TG频道链接复制成功，打开Telegram粘贴访问')" data-i18n="tg-copy">复制 TG 频道链接</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── 安装教程 ── -->
+    <section class="card" id="guide">
+        <h2 data-i18n="guide-title">安装教程</h2>
+        <ol class="guide-list">
+            <li><strong data-i18n="guide-1-bold">Android 13+ 新机：</strong><span data-i18n="guide-1-desc">提取 init_boot 镜像，用 ApkeSU 进行修补，通过 Kernel Flasher 工具刷写。若从 KernelSU 转 Root 管理器，仅需授予 ApkeSU 超级用户权限，选择「推荐直接安装」模式即可。</span></li>
+            <li><strong data-i18n="guide-2-bold">系统 OTA 升级后：</strong><span data-i18n="guide-2-desc">独立槽位安装 A/B 槽位，防止更新导致 Root 丢失，转入 Boot 分区使用。</span></li>
+            <li><strong data-i18n="guide-3-bold">Android 12 及以下旧机型：</strong><span data-i18n="guide-3-desc">使用 AnyKernel 刷入指定的 ak3 包，选择指定的 A/B 分区。</span></li>
+            <li><strong data-i18n="guide-4-bold">ApkeSU 更新：</strong><span data-i18n="guide-4-desc">若发现内核与管理器版本不匹配，直接点击「工作中」→「推荐直接安装」即可更新内核版本。</span></li>
+        </ol>
+    </section>
+
+</div>
+
+<footer>
+    <p>ApkeSU Open Source Project &copy; 2026｜文件分发：GITHUB发行</p>
+    <p>
+        <a href="https://github.com/fixz232/ApkeSU" target="_blank">GitHub 源码</a>
+        &nbsp;|&nbsp; QQ 群：778719605
+        &nbsp;|&nbsp; <a href="https://t.me/ApkeSu" target="_blank">Telegram 频道</a>
+    </p>
+    <p style="margin-top:8px;color:var(--text-muted);" data-i18n="footer-dev">适配设备：OPPO / 一加 / 真我 / 小米 / 红米 / 红魔 / 联想 / 魅族 全手机平板</p>
+    <p style="margin-top:4px;color:var(--text-muted);font-size:12px;" data-i18n="footer-disclaimer">仅用于安卓设备技术学习调试，禁止违规商用</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// ── 多语言字典 ──
+const i18n = {
+    zh: {
+        'banner-sub': '基于 KernelSU 深度改造，聚焦 Manager 体验、LKM 修补与个人设备调试。',
+        'banner-desc': '版本 V2.6.0 (32685)｜Tracepoint LKM｜KPatch Next 内置｜20+ 像素动漫主题｜全品牌手机平板通用',
+        'btn-download': '获取 ApkeSU',
+        'btn-github': 'GitHub 源码',
+        'cap-title': '核心能力',
+        'cap-desc': '从内核策略、ksud 到 Manager，ApkeSU 把关键状态放在同一条链路里，让异常更容易被发现和处理。',
+        'cap-1-title': 'LKM 底层 Root',
+        'cap-1-desc': '无需修补 Boot 镜像即可加载内核模块，完整 Root 权限，兼容 SELinux 强制模式。',
+        'cap-2-title': 'KPatch Root 隐藏',
+        'cap-2-desc': '清除 Root 检测痕迹，适配银行、支付、游戏风控软件的安全校验。',
+        'cap-3-title': 'App Profile 管理',
+        'cap-3-desc': '按应用精确设置 uid、gid、capabilities、SELinux 与挂载命名空间，权限颗粒度更细。',
+        'cap-4-title': '全自动救砖防护',
+        'cap-4-desc': '自动备份 boot 分区，卡 logo、无限重启时自动回滚修复，降低刷机风险。',
+        'cap-5-title': '快捷工具箱',
+        'cap-5-desc': '一键进入 Rec、Fastboot、EDL 深度下载模式，无需记忆复杂指令。',
+        'cap-6-title': '模块统一管理',
+        'cap-6-desc': '批量开关 Root 模块，自动检测版本更新，模块生态一站式管理。',
+        'personalize-title': '个性化体验',
+        'personalize-desc': '界面风格、背景、图标、卡片、启动媒体和声音都能独立设置，也可以打包成 .kstheme 主题文件迁移。',
+        'pers-1-title': '8 种界面风格',
+        'pers-1-desc': 'Miuix、Material、Obsidian Console、Liquid Glass、Four Seasons、SKRoot(Pro)、Alpha、Delta，不只是改主题色。',
+        'pers-2-title': '二次元像素主题',
+        'pers-2-desc': '20+ 像素动漫主题，春日清新、赛博朋克深色等全套风格，支持日夜自动切换。',
+        'pers-3-title': '动态背景系统',
+        'pers-3-desc': '设置全局或分页面壁纸（图片/GIF/视频），支持粒子动画与毛玻璃效果。',
+        'pers-4-title': '图标与声音',
+        'pers-4-desc': '替换启动器图标和底部导航图标；支持启动音效、点击音效和背景音乐自定义。',
+        'device-title': '设备适配清单',
+        'device-desc': '基于 GKI 内核，覆盖主流品牌全机型。Android 13/14/15，骁龙、天玑处理器全覆盖。',
+        'open-title': '开源与合规',
+        'open-desc': 'ApkeSU 是 KernelSU 的衍生开源项目。内核部分遵循 GPL-2.0-only，Manager 衍生代码遵循 GPL-3.0-or-later。所有修改公开可查，无付费售卖版本。',
+        'open-1-title': '完整源码',
+        'open-1-desc': '公开所有修改与对应代码，接受社区审查。',
+        'open-2-title': '尊重上游',
+        'open-2-desc': '保留 KernelSU 来源标注与许可证声明。',
+        'open-3-title': '免费分发',
+        'open-3-desc': '无官方付费售卖版本，社区自由获取。',
+        'btn-src': '查看 GitHub 源码 ↗',
+        'comm-title': '官方社群',
+        'comm-desc': '反馈问题、讨论设备适配、跟进项目更新，官方唯一渠道如下，谨防假冒。',
+        'qq-tip': 'QQ 浏览器 / 原厂自带浏览器可直接打开；其他浏览器请复制链接到 QQ 内访问',
+        'qq-open': '直接打开 QQ 群',
+        'qq-copy': '复制群链接备用',
+        'tg-tip': '点击直接跳转 TG 频道，无法跳转时复制完整链接打开 Telegram 加入',
+        'tg-open': '打开 TG 频道',
+        'tg-copy': '复制 TG 频道链接',
+        'guide-title': '安装教程',
+        'guide-1-bold': 'Android 13+ 新机：',
+        'guide-1-desc': '提取 init_boot 镜像，用 ApkeSU 进行修补，通过 Kernel Flasher 工具刷写。若从 KernelSU 转 Root 管理器，仅需授予 ApkeSU 超级用户权限，选择「推荐直接安装」模式即可。',
+        'guide-2-bold': '系统 OTA 升级后：',
+        'guide-2-desc': '独立槽位安装 A/B 槽位，防止更新导致 Root 丢失，转入 Boot 分区使用。',
+        'guide-3-bold': 'Android 12 及以下旧机型：',
+        'guide-3-desc': '使用 AnyKernel 刷入指定的 ak3 包，选择指定的 A/B 分区。',
+        'guide-4-bold': 'ApkeSU 更新：',
+        'guide-4-desc': '若发现内核与管理器版本不匹配，直接点击「工作中」→「推荐直接安装」即可更新内核版本。',
+        'footer-dev': '适配设备：OPPO / 一加 / 真我 / 小米 / 红米 / 红魔 / 联想 / 魅族 全手机平板',
+        'footer-disclaimer': '仅用于安卓设备技术学习调试，禁止违规商用',
+    },
+    en: {
+        'banner-sub': 'Deeply modified based on KernelSU, focusing on Manager experience, LKM patching, and personal device debugging.',
+        'banner-desc': 'Version V2.6.0 (32685)｜Tracepoint LKM｜KPatch Next Built-in｜20+ Anime Pixel Themes｜Universal for All Brands',
+        'btn-download': 'Get ApkeSU',
+        'btn-github': 'GitHub Source',
+        'cap-title': 'Core Capabilities',
+        'cap-desc': 'From kernel policies and ksud to Manager, ApkeSU places key states in a single chain for easier anomaly detection and handling.',
+        'cap-1-title': 'LKM Root',
+        'cap-1-desc': 'Load kernel modules without patching boot images. Full Root access with SELinux enforcing mode compatibility.',
+        'cap-2-title': 'KPatch Root Hiding',
+        'cap-2-desc': 'Cleans Root detection traces, adapting to security checks in banking, payment, and gaming apps.',
+        'cap-3-title': 'App Profile Management',
+        'cap-3-desc': 'Precisely set uid, gid, capabilities, SELinux, and mount namespaces per app for finer-grained permission control.',
+        'cap-4-title': 'Auto Brick Recovery',
+        'cap-4-desc': 'Automatically backs up boot partition and rolls back on bootloop or stuck logo to reduce flashing risks.',
+        'cap-5-title': 'Quick Toolbox',
+        'cap-5-desc': 'One-click access to Recovery, Fastboot, and EDL deep download modes without complex commands.',
+        'cap-6-title': 'Module Management',
+        'cap-6-desc': 'Batch toggle Root modules, auto-detect updates, one-stop module ecosystem management.',
+        'personalize-title': 'Personalization',
+        'personalize-desc': 'Interface style, backgrounds, icons, cards, boot media, and sounds can all be configured independently. Export as .kstheme files.',
+        'pers-1-title': '8 Interface Styles',
+        'pers-1-desc': 'Miuix, Material, Obsidian Console, Liquid Glass, Four Seasons, SKRoot(Pro), Alpha, Delta — more than just color changes.',
+        'pers-2-title': 'Anime Pixel Themes',
+        'pers-2-desc': '20+ anime pixel themes including spring fresh and cyberpunk dark styles with day/night auto-switch.',
+        'pers-3-title': 'Dynamic Backgrounds',
+        'pers-3-desc': 'Set global or per-page wallpapers (image/GIF/video) with particle animations and frosted glass effects.',
+        'pers-4-title': 'Icons & Sounds',
+        'pers-4-desc': 'Replace launcher and bottom nav icons. Support boot sound, click sound, and background music customization.',
+        'device-title': 'Device Compatibility',
+        'device-desc': 'Based on GKI kernel, covering all flagship models from major brands. Android 13/14/15, Snapdragon & Dimensity full coverage.',
+        'open-title': 'Open Source',
+        'open-desc': 'ApkeSU is a derivative open-source project of KernelSU. Kernel part follows GPL-2.0-only, Manager code follows GPL-3.0-or-later. All modifications are publicly auditable.',
+        'open-1-title': 'Full Source',
+        'open-1-desc': 'All modifications and corresponding code are open for community review.',
+        'open-2-title': 'Respect Upstream',
+        'open-2-desc': 'KernelSU attribution and license declarations are preserved.',
+        'open-3-title': 'Free Distribution',
+        'open-3-desc': 'No paid official version. Freely available to the community.',
+        'btn-src': 'View GitHub Source ↗',
+        'comm-title': 'Community',
+        'comm-desc': 'Report issues, discuss device compatibility, follow project updates. Official channels only — beware of fakes.',
+        'qq-tip': 'QQ Browser / OEM browsers can open directly; other browsers copy the link to open in QQ.',
+        'qq-open': 'Open QQ Group',
+        'qq-copy': 'Copy Group Link',
+        'tg-tip': 'Click to open TG channel directly; if it fails, copy the link and open in Telegram.',
+        'tg-open': 'Open TG Channel',
+        'tg-copy': 'Copy TG Channel Link',
+        'guide-title': 'Installation Guide',
+        'guide-1-bold': 'Android 13+ New Devices:',
+        'guide-1-desc': 'Extract init_boot image, patch with ApkeSU, flash via Kernel Flasher. If migrating from KernelSU, grant Superuser permission and select "Recommended Direct Install".',
+        'guide-2-bold': 'After OTA Updates:',
+        'guide-2-desc': 'Use independent slot A/B installation to prevent Root loss after updates.',
+        'guide-3-bold': 'Android 12 and Below:',
+        'guide-3-desc': 'Use AnyKernel to flash the specified ak3 package, selecting the A/B partition.',
+        'guide-4-bold': 'ApkeSU Updates:',
+        'guide-4-desc': 'If kernel and Manager versions mismatch, click "Working" → "Recommended Direct Install" to update the kernel version.',
+        'footer-dev': 'Compatible: OPPO / OnePlus / Realme / Xiaomi / Redmi / RedMagic / Lenovo / Meizu phones & tablets',
+        'footer-disclaimer': 'For Android technical learning and debugging only. Commercial use prohibited.',
+    },
+    ja: {
+        'banner-sub': 'KernelSUを深く改修し、Manager体験・LKMパッチ・個人デバイスデバッグに注力。',
+        'banner-desc': 'バージョン V2.6.0 (32685)｜Tracepoint LKM｜KPatch Next内蔵｜20+ アニメ像素テーマ｜全ブランド対応',
+        'btn-download': 'ApkeSUを入手',
+        'btn-github': 'GitHubソース',
+        'cap-title': 'コア機能',
+        'cap-desc': 'カーネルポリシーからksud、Managerまで、ApkeSUは关键な状態を1本のチェーンに配置し、異常を発見・処理しやすくします。',
+        'cap-1-title': 'LKM Root',
+        'cap-1-desc': 'Bootイメージを修正せずにカーネルモジュールをロード。完全なRoot権限、SELinux enforcingモード互換。',
+        'cap-2-title': 'KPatch Root非表示',
+        'cap-2-desc': 'Root検出痕跡を除去し、銀行・決済・ゲームのセキュリティチェックに適応。',
+        'cap-3-title': 'App Profile管理',
+        'cap-3-desc': 'アプリごとにuid、gid、capabilities、SELinux、マウント名前空間を精密に設定。',
+        'cap-4-title': '自動救砖防護',
+        'cap-4-desc': 'bootパーティションを自動バックアップし、ブートループ時に自動ロールバック。',
+        'cap-5-title': 'クイック工具箱',
+        'cap-5-desc': 'Rec、Fastboot、EDL_deep downloadモードにワンクリックでアクセス。',
+        'cap-6-title': 'モジュール統合管理',
+        'cap-6-desc': 'Rootモジュールの一括ON/OFF、バージョン自動検出、モジュールエコシステム一元管理。',
+        'personalize-title': 'パーソナライズ',
+        'personalize-desc': 'UIスタイル、背景、アイコン、カード、起動メディア、音を個別設定可能。.ksthemeファイルで移行も。',
+        'pers-1-title': '8種類のUIスタイル',
+        'pers-1-desc': 'Miuix、Material、Obsidian Console、Liquid Glass、Four Seasons、SKRoot(Pro)、Alpha、Delta。',
+        'pers-2-title': 'アニメ像素テーマ',
+        'pers-2-desc': '20+ アニメ像素テーマ、春日クリア・サイバーパンク暗系など。日夜自動切替対応。',
+        'pers-3-title': 'ダイナミック背景',
+        'pers-3-desc': 'グローバルまたはページ別ウォールペーパー設定（画像/GIF/動画）、パーティクルアニメーション対応。',
+        'pers-4-title': 'アイコンと音声',
+        'pers-4-desc': 'ランチャーアイコン・下部ナビアイコン交換。起動音・クリック音・BGMカスタム対応。',
+        'device-title': '対応デバイス',
+        'device-desc': 'GKIカーネルベース、主要ブランド全機種対応。Android 13/14/15、Snapdragon・Dimensity全カバー。',
+        'open-title': 'オープンソース',
+        'open-desc': 'ApkeSUはKernelSUの派生オープンソースプロジェクト。カーネル部分はGPL-2.0-only、ManagerコードはGPL-3.0-or-later。',
+        'open-1-title': '完全ソース公開',
+        'open-1-desc': 'すべての修正と対応コードを公開し、コミュニティ審査に耐える。',
+        'open-2-title': 'アップストリーム尊重',
+        'open-2-desc': 'KernelSUの出典表示とライセンス声明を保持。',
+        'open-3-title': '無料配布',
+        'open-3-desc': '有料正式版なし。コミュニティが自由に取得可能。',
+        'btn-src': 'GitHubソースを見る ↗',
+        'comm-title': 'コミュニティ',
+        'comm-desc': '問題報告・デバイス互換性議論・プロジェクト更新フォロー。公式チャンネルのみ利用してください。',
+        'qq-tip': 'QQブラウザ/ OEMブラウザで直接開けます。他のブラウザはQQ内でリンクを開いてください。',
+        'qq-open': 'QQグループを開く',
+        'qq-copy': 'グループリンクをコピー',
+        'tg-tip': 'クリックでTGチャンネルに直接ジャンプ。失敗時はリンクをコピーしてTelegramで開いてください。',
+        'tg-open': 'TGチャンネルを開く',
+        'tg-copy': 'TGチャンネルリンクをコピー',
+        'guide-title': 'インストールガイド',
+        'guide-1-bold': 'Android 13+ 新機種：',
+        'guide-1-desc': 'init_bootイメージを抽出し、ApkeSUでパッチ適用後、Kernel Flasherでフラッシュ。KernelSU移行時はSuperuser権限を付与し「推奨直接インストール」を選択。',
+        'guide-2-bold': 'OTAアッブデート後：',
+        'guide-2-desc': '独立スロットA/Bインストールで、アップデート後のRoot喪失を防ぐ。',
+        'guide-3-bold': 'Android 12及以下旧機種：',
+        'guide-3-desc': 'AnyKernelを使用して指定ak3パッケージをフラッシュし、A/Bパーティションを選択。',
+        'guide-4-bold': 'ApkeSU更新：',
+        'guide-4-desc': 'カーネルとManagerのバージョンが不一致の場合は「作業中」→「推奨直接インストール」をクリックして更新。',
+        'footer-dev': '対応デバイス：OPPO / 一加 / 真我 / 小米 / 红米 / 红魔 / 联想 / 魅族 全手机平板',
+        'footer-disclaimer': 'Android技術学習・デバッグ専用。商業利用を禁止します。',
+    },
+    ko: {
+        'banner-sub': 'KernelSU 기반 심층 수정, Manager 경험, LKM 패치, 개인 디바이스 디버깅에 집중.',
+        'banner-desc': '버전 V2.6.0 (32685)｜Tracepoint LKM｜KPatch Next 내장｜20+ 애니메이션 픽셀 테마｜전 브랜드 지원',
+        'btn-download': 'ApkeSU 받기',
+        'btn-github': 'GitHub 소스',
+        'cap-title': '핵심 기능',
+        'cap-desc': '커널 정책, ksud, Manager까지, ApkeSU는 핵심 상태를 하나의 체인에 배치하여 이상 탐지 및 처리를 쉽게 합니다.',
+        'cap-1-title': 'LKM Root',
+        'cap-1-desc': '부트 이미지 패치 없이 커널 모듈 로드. 완전한 Root 권한, SELinux enforcing 모드 호환.',
+        'cap-2-title': 'KPatch Root 숨기기',
+        'cap-2-desc': 'Root 감지 흔적 제거, 은행/결제/게임 보안 검사에 적응.',
+        'cap-3-title': 'App Profile 관리',
+        'cap-3-desc': '앱별로 uid, gid, capabilities, SELinux, 마운트 네임스페이스 정밀 설정.',
+        'cap-4-title': '자동 백업 복구',
+        'cap-4-desc': 'boot 파티션 자동 백업, 부트루프 시 자동 롤백.',
+        'cap-5-title': '빠른 공구상자',
+        'cap-5-desc': 'Rec, Fastboot, EDL 심층 다운로드 모드로 원클릭 접근.',
+        'cap-6-title': '모듈 통합 관리',
+        'cap-6-desc': 'Root 모듈 일괄 ON/OFF, 버전 자동 감지, 모듈 생태계 원터치 관리.',
+        'personalize-title': '개인화',
+        'personalize-desc': 'UI 스타일, 배경, 아이콘, 카드, 부팅 미디어, 사운드를 개별 설정 가능. .kstheme 파일로 이전.',
+        'pers-1-title': '8종 UI 스타일',
+        'pers-1-desc': 'Miuix, Material, Obsidian Console, Liquid Glass, Four Seasons, SKRoot(Pro), Alpha, Delta.',
+        'pers-2-title': '애니메이션 픽셀 테마',
+        'pers-2-desc': '20+ 애니메이션 픽셀 테마, 봄 클리어/사이버펑크 다크 스타일. 주야 자동 전환 지원.',
+        'pers-3-title': '다이나믹 배경',
+        'pers-3-desc': '글로벌 또는 페이지별 벽지 설정(이미지/GIF/영상), 입자 애니메이션 지원.',
+        'pers-4-title': '아이콘과 음성',
+        'pers-4-desc': '런처 아이콘·하단 네비 아이콘 교체. 부팅음·클릭음·BGM 커스텀 지원.',
+        'device-title': '지원 기기',
+        'device-desc': 'GKI 커널 기반, 주요 브랜드 전 기종 지원. Android 13/14/15, Snapdragon·Dimensity 전체 커버.',
+        'open-title': '오픈소스',
+        'open-desc': 'ApkeSU는 KernelSU 파생 오픈소스 프로젝트. 커널 부분은 GPL-2.0-only, Manager 코드는 GPL-3.0-or-later.',
+        'open-1-title': '완전 소스 공개',
+        'open-1-desc': '모든 수정과 대응 코드를 공개하여 커뮤니티 심사에 대응.',
+        'open-2-title': '업스트림 존중',
+        'open-2-desc': 'KernelSU 출처 표시와 라이선스 선언을 유지.',
+        'open-3-title': '무료 배포',
+        'open-3-desc': '유료 공식 버전 없음. 커뮤니티가 자유롭게 획득 가능.',
+        'btn-src': 'GitHub 소스 보기 ↗',
+        'comm-title': '커뮤니티',
+        'comm-desc': '문제 보고·기기 호환성 논의·프로젝트 업데이트 팔로우. 공식 채널만 이용하세요.',
+        'qq-tip': 'QQ 브라우저/OEM 브라우저로 직접 열 수 있습니다. 다른 브라우저는 QQ에서 링크를 엽니다.',
+        'qq-open': 'QQ 그룹 열기',
+        'qq-copy': '그룹 링크 복사',
+        'tg-tip': '클릭으로 TG 채널로 직접 점프. 실패 시 링크를 복사하여 Telegram에서 엽니다.',
+        'tg-open': 'TG 채널 열기',
+        'tg-copy': 'TG 채널 링크 복사',
+        'guide-title': '설치 가이드',
+        'guide-1-bold': 'Android 13+ 신규 기기:',
+        'guide-1-desc': 'init_boot 이미지 추출 후 ApkeSU로 패치 적용, Kernel Flasher로 플래시. KernelSU 이전 시 Superuser 권한 부여 후 "권장 직접 설치" 선택.',
+        'guide-2-bold': 'OTA 업그레이드 후:',
+        'guide-2-desc': '독립 슬롯 A/B 설치를 통해 업그레이드 후 Root 손실 방지.',
+        'guide-3-bold': 'Android 12 이하 구형 기기:',
+        'guide-3-desc': 'AnyKernel 사용하여 지정 ak3 패키지 플래시, A/B 파티션 선택.',
+        'guide-4-bold': 'ApkeSU 업데이트:',
+        'guide-4-desc': '커널과 Manager 버전 불일치 시 "작업 중" → "권장 직접 설치" 클릭하여 업데이트.',
+        'footer-dev': '지원 기기：OPPO / 一加 / 真我 / 小米 / 红米 / 红魔 / 联想 / 魅族 전手机平板',
+        'footer-disclaimer': 'Android 기술 학습·디버깅 전용. 상업적 사용 금지.',
+    }
+};
+
+let currentLang = 'zh';
+
+function switchLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+    const dict = i18n[lang] || i18n['zh'];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                el.placeholder = dict[key];
+            } else {
+                el.textContent = dict[key];
+            }
+        }
+    });
+    localStorage.setItem('apkesu_lang', lang);
+}
+
+// ── 日月开关 ──
+function toggleTheme() {
+    const html = document.documentElement;
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    document.getElementById('themeIcon').textContent = isDark ? '🌙' : '☀️';
+    document.getElementById('themeText').textContent = isDark ? '暗黑' : '亮色';
+    localStorage.setItem('apkesu_theme', isDark ? 'light' : 'dark');
+}
+
+// ── 初始化 ──
+(function init() {
+    const savedTheme = localStorage.getItem('apkesu_theme');
+    const savedLang = localStorage.getItem('apkesu_lang');
+    if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.getElementById('themeIcon').textContent = '☀️';
+        document.getElementById('themeText').textContent = '亮色';
+    }
+    if (savedLang && i18n[savedLang]) {
+        document.getElementById('langSelect').value = savedLang;
+        switchLang(savedLang);
+    }
+})();
+</script>
+</body>
+</html>
